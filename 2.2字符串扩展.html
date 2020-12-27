@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. es6字符串新提供的几个方法
+        let aa = "hello,world";
+        // 表示是否包含
+        console.log(aa.includes("llo"));
+        // 表示是否以什么开头
+        console.log(aa.startsWith("hel"));
+        console.log(aa.endsWith("rld"));
+
+
+        // 2. es6使用``提供字符串模版
+        // 以前要使用很长一串字符串则需要拼接,而es6提供``进行字符串模版
+        let ss = `<html>
+                        aaa
+                    </html>`
+
+       console.log(ss);
+
+        // 模版中可以插入表达式${},也可以进行表达式计算
+        let name = "lisi";
+        let age = 20;
+        let str = `hello,${name},${age+10}`;
+        console.log(str)
+
+        // 在字符串模版中还可以使用${}调用函数
+        let box = ()=>"aaa";
+        let str1 = `hek,${box()}`
+        console.log(str1)
+    </script>
+</body>
+</html>

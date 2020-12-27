@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.对象新增的方法
+        var person = {
+            name : "lisi",
+            age : 10
+        }
+        console.log(Object.keys(person));//将所有的key返回为一个数组
+        console.log(Object.values(person));//将所有的value返回一个数组
+        console.log(Object.entries(person))// 将key-value返回一个数组
+
+        // 合并对象
+        var aa = {
+            sex : 1
+        }
+        var bb = {
+            card : "aa"
+        }
+        // assign表示将后面的对象属性合并到第一个对象中
+        Object.assign(person,aa,bb);
+        console.log(person)
+
+        // 2.对象声明的简写
+        var name = "aa";
+        var age = 10;
+
+        // 声明对象
+        var p1 = {name:name,age:age};
+        console.log(p1);
+        // 简写方式，如果属性名与参数名一样,则可以简写
+        var p2 = {name,age};
+        console.log(p2);
+
+        // 3.对象方法的简写
+        var p4 = {
+            name:"aa",
+            // 以前的写法
+            run:function(desc){
+                console.log(this.name,desc);
+            },
+            //使用箭头函数简写,箭头函数中不能使用this对象,需要直接使用对象名
+            run1:(desc)=>console.log(p4.name,desc),
+            // 简写方式
+            run2(desc){
+                console.log(this.name,desc);
+            }
+        }
+
+        p4.run("-dd");
+        p4.run1("-ff");
+        p4.run2("-xx");
+
+        // 4.对象运算扩展符..., 表示将person的属性,aa的属性,p4的属性都遍历出来
+        var p5 = {...person,...aa,...p4};
+        console.log(p5)
+    </script>
+</body>
+</html>

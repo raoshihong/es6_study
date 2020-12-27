@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 1 var申明的变量会跨作用域,而let申明的变量不会跨作用域
+        // {
+        //     let a = 10;
+        //     var b = 22;
+        // }
+
+        // console.log(a);
+        // console.log(b);// 这里会报错,Uncaught ReferenceError: a is not defined
+    
+        // // 2. let 变量不能重复声明,而var变量可以重复声明
+        //     let a = 10;
+        //     let a = 20;//Identifier 'a' has already been declared
+
+        //     var b = 'aa';
+        //     var b = 'ss';
+
+        // 3. let变量不能提升，而var变量可以提升
+        // console.log(b); //undefined
+        // var b = 'aa';
+
+        // console.log(a);//ReferenceError: Cannot access 'a' before initialization
+        // let a = 10;
+
+
+        // 4.const声明的变量不能被修改
+        const a = 10;
+        a = 20; //Assignment to constant variable
+    </script>
+</body>
+</html>

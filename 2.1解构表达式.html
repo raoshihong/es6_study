@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+  /**      // 1.数组解构
+        // 以前的写法,想要将数组元素分别赋值给不同变量
+        let arr = [1,2,3];
+        let a = arr[0];
+        let b = arr[1];
+        let c = arr[2];
+
+        console.log(a,b,c); // 1 2 3
+
+        // 使用es6提供的语法对数组进行解构,数组解构使用中括号[]
+        let [a1,b1,c1] = arr;
+        console.log(a1,b1,c1);// 1 2 3
+    **/
+
+        //2. 对象解构
+        // 以前对写法,将对象中对属性和方法赋值给变量
+        const person = {
+            name : "lisi",
+            age : 20,
+            languag:["java","js"],
+            box:()=>{
+                return "aa";
+            }
+        }
+        const a = person.name;
+        const b = person.age;
+        const c = person.languag;
+        const d = person.box;
+
+        console.log(a,b,c,d());//lisi 20 (2) ["java", "js"] aa
+
+        // 使用es6的解构表达式语法，可以快速将对象进行解构
+        const {name:a1,age,languag,box} = person;//name:a1表示别名a1
+
+        console.log(a1,age,languag,box());//lisi 20 (2) ["java", "js"] aa
+    </script>
+</body>
+</html>

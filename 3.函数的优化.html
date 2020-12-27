@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 1. 函数参数默认值
+        // 以前函数参数默认值写法
+        var aa = function(a,b){
+            b = b|1;// 表示b没有值，则默认使用1
+            return a+b;
+        }
+
+        console.log(aa(20));// 这里只传递了一个参数,最终输出21
+
+        // 现在的写法
+        var bb = function(a,b=10){
+            return a+b;
+        }
+        console.log(bb(40));//50
+
+        // 2. 可变参数
+        var cc = function(...arr){
+            console.log(arr.length);
+        }
+
+        cc("a");
+        cc("a","b");
+        cc("a","b","c");
+
+
+        // 3.es6 提供了箭头函数,相当于java中的lambd
+        // 以前的函数的写法
+        var dd = function(a){
+            console.log(a);
+        }
+        dd("bbbb");
+        // 现在直接可以简化
+        var ff = a => console.log(a);
+        ff("ffffff");
+        // 多个参数的写法
+        var ee = (a,b) => {
+            let c = a+b;
+            console.log(c);
+        }
+        ee(1,2);
+
+        //4 .函数中使用解构表达式
+        // 以前解析对象
+        var person = {
+            name : "lisi"
+        }
+        var kk = function(p){
+            console.log(p.name);
+        }
+        kk(person);
+
+        // 现在可以这么写,表示直接解构person对象中的name属性
+        var uu = ({name})=>console.log(name);
+        uu(person);
+
+    </script>
+</body>
+</html>
